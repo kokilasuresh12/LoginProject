@@ -1,16 +1,24 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
     <link rel="stylesheet" href="/static/style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Welcome {{ request.user.username }}</h1>
+    <div class="main-container">
+      <header>
+        <h1>Hello, {{ request.user.username }}!</h1>
+      </header>
 
-      <p>Welcome to home page.</p>
+      <section>
+        <p>Welcome to home page. You are now logged in. Enjoy exploring your dashboard.</p>
+      </section>
 
-      <a href="/logout/"> Logout </a>
+      <footer>
+        <a href="{% url 'logout' %}" class="logout-button">Logout</a>
+      </footer>
     </div>
   </body>
 </html>
